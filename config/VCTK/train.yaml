@@ -1,0 +1,26 @@
+path:
+  ckpt_path: "./output/ckpt/VCTK"
+  log_path: "./output/log/VCTK"
+  result_path: "./output/result/VCTK"
+optimizer:
+  batch_size: 32
+  betas: [0.9, 0.98]
+  eps: 0.000000001
+  weight_decay: 0.000001 # lambda_r
+  grad_clip_thresh: 1.0
+  grad_acc_step: 1
+  anneal_steps: [300000, 400000, 500000]
+  anneal_rate: 0.3
+  init_lr: 0.0001
+  anneal_lr: 0.001
+step:
+  total_step: 900000
+  log_step: 100
+  synth_step: 1000
+  val_step: 1000
+  save_step: 25000
+loss:
+  anneal_steps: 10000
+  lambda_f: 0.001
+  lambda_a: 0.01
+  # lambda_r: 0.000001

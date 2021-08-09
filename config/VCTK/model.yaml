@@ -1,0 +1,36 @@
+n_speaker: 109
+external_speaker_dim: 512
+
+transformer:
+  encoder_layer: 4
+  encoder_head: 2
+  encoder_hidden: 128
+  decoder_layer: 6
+  decoder_head: 2
+  decoder_hidden: 128
+  conv_filter_size: 1024
+  conv_kernel_size: [3, 3]
+  encoder_dropout: 0.1
+  decoder_dropout: 0.1
+
+prosody_encoder:
+  encoder_layer: 4
+  encoder_head: 8
+  encoder_hidden: 128
+  conv_layer: 3
+  conv_filter_size: 1024
+  conv_kernel_size: 3
+  dropout: 0.1
+
+prosody_predictor:
+  filter_size: 128
+  kernel_size: 3
+  dropout: 0.1
+
+multi_speaker: True
+
+max_seq_len: 1150 # max sequence length of VCTK is 1126
+
+vocoder:
+  model: "HiFi-GAN" # support 'HiFi-GAN', 'MelGAN'
+  speaker: "universal" # support  'LJSpeech', 'universal'

@@ -10,6 +10,12 @@ PyTorch Implementation of [Daft-Exprt: Robust Prosody Transfer Across Speakers f
     <img src="img/model_2.png" width="80%">
 </p>
 
+The validation logs up to 70K of synthesized mel and alignment are shown below (VCTK_val_p237-088).
+
+<p align="center">
+    <img src="./img/VCTK_val_p237-088.gif" width="80%">
+</p>
+
 # Quickstart
 
 ***DATASET*** refers to the names of datasets such as `VCTK` in the following documents.
@@ -23,13 +29,13 @@ Also, `Dockerfile` is provided for `Docker` users.
 
 ## Inference
 
-You have to download the [pretrained models]() and put them in `output/ckpt/DATASET/`.
+You have to download the [pretrained models](https://drive.google.com/drive/folders/1rmeW24lrCg_qwPkVI0D4bRNq4HSv_4rE?usp=sharing) and put them in `output/ckpt/DATASET/`.
 
 For a **multi-speaker TTS**, run
 ```
 python3 synthesize.py --text "YOUR_DESIRED_TEXT" --speaker_id SPEAKER_ID --restore_step RESTORE_STEP --mode single --dataset DATASET --ref_audio REF_AUDIO
 ```
-to synthesize speech with the style of input audio at REF_AUDIO. The generated utterances will be put in `output/result/`.
+to synthesize speech with the style of input audio at REF_AUDIO. The dictionary of learned speakers can be found at `preprocessed_data/VCTK/speakers.json`, and the generated utterances will be put in `output/result/`.
 
 ## Batch Inference
 Batch inference is also supported, try
@@ -88,11 +94,11 @@ tensorboard --logdir output/log
 ```
 
 to serve TensorBoard on your localhost.
-<!-- The loss curves, synthesized mel-spectrograms, and audios are shown.
+The loss curves, synthesized mel-spectrograms, and audios are shown.
 
 ![](./img/tensorboard_loss.png)
 ![](./img/tensorboard_spec.png)
-![](./img/tensorboard_audio.png) -->
+![](./img/tensorboard_audio.png)
 
 # Implementation Issues
 

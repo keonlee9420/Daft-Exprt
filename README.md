@@ -103,7 +103,7 @@ The loss curves, synthesized mel-spectrograms, and audios are shown.
 # Implementation Issues
 
 - **RangeParameterPredictor** is built with BiLSTM rather than a single linear layer with softplus() activation (it is however implemented and named as 'range_param_predictor_paper' in **GaussianUpsampling**).
-- Use `32` batch size instead of `48` due to memory issues.
+- Use `16` batch size instead of `48` due to memory issues.
 - Use log duration instead of normal duration.
 - Follow **FastSpeech2** for the preprocess of pitch and energy.
 - Two options for embedding for the **multi-speaker TTS** setting: training speaker embedder from scratch or using a pre-trained [philipperemy's DeepSpeaker](https://github.com/philipperemy/deep-speaker) model (as [STYLER](https://github.com/keonlee9420/STYLER) did). You can toggle it by setting the config (between `'none'` and `'DeepSpeaker'`).

@@ -332,7 +332,7 @@ class ProsodyEncoder(nn.Module):
             )
 
         # -- Avg Pooling
-        prosody_vector = enc_seq.sum(dim=1, keepdim=True) # [B, 1, H]
+        prosody_vector = enc_seq.mean(dim=1, keepdim=True) # [B, 1, H]
 
         # -- Speaker Classifier
         speaker_posterior = self.speaker_classifier(prosody_vector.squeeze(1))

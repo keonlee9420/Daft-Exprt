@@ -59,7 +59,7 @@ class FiLM(nn.Module):
         """
         gammas = self.s_gamma * gammas.expand_as(x)
         betas = self.s_beta * betas.expand_as(x)
-        return (gammas + 1.0 * x) + betas
+        return (gammas + 1.0) * x + betas
 
 
 class LinearNorm(nn.Module):

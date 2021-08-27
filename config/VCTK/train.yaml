@@ -3,7 +3,7 @@ path:
   log_path: "./output/log/VCTK"
   result_path: "./output/result/VCTK"
 optimizer:
-  batch_size: 32
+  batch_size: 16
   betas: [0.9, 0.98]
   eps: 0.000000001
   weight_decay: 0.000001 # lambda_r

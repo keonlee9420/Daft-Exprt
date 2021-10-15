@@ -1,3 +1,4 @@
+ignore_layers: [] # ["speaker_emb"]
 path:
   ckpt_path: "./output/ckpt/VCTK"
   log_path: "./output/log/VCTK"

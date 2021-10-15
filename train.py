@@ -39,7 +39,8 @@ def main(args, configs):
     )
 
     # Prepare model
-    model, optimizer = get_model(args, configs, device, train=True)
+    model, optimizer = get_model(
+        args, configs, device, train=True, ignore_layers=train_config["ignore_layers"])
     model = nn.DataParallel(model)
     num_param = get_param_num(model)
     Loss = DaftExprtLoss(preprocess_config, model_config, train_config).to(device)

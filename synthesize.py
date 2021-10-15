@@ -229,7 +229,8 @@ if __name__ == "__main__":
         os.path.join(train_config["path"]["result_path"], str(args.restore_step)), exist_ok=True)
 
     # Get model
-    model = get_model(args, configs, device, train=False)
+    model = get_model(args, configs, device, train=False,
+                      ignore_layers=train_config["ignore_layers"])
 
     # Load vocoder
     vocoder = get_vocoder(model_config, device)
